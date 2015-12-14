@@ -7,5 +7,12 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/sareh/angular-template",
-  "moduleType": []
+  "moduleType": [],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-aria": "~1.4.8"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.0"
+  }
 }
