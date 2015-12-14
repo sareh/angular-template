@@ -14,9 +14,17 @@
     "angular-resource": "~1.4.8",
     "angular-jwt": "~0.0.9",
     "angular-ui-router": "~0.2.15",
-    "foundation-sites": "~6.0.5"
+    "foundation-sites": "~6.0.5",
+    "jquery": "~2.1.4"
   },
   "devDependencies": {
     "gulp": "~3.9.0"
-  }
+  },
+  "ignore": [
+     "**/.*",
+     "node_modules",
+     "bower_components",
+     "test",
+     "tests"
+   ]
 }
