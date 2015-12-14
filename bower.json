@@ -1,0 +1,11 @@
+{
+  "name": "angular-template",
+  "description": "A front-end app using Angular.js, bower, gulp &amp; ngAria.",
+  "main": "app.js",
+  "authors": [
+    "Sareh Heidari"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sareh/angular-template",
+  "moduleType": []
+}

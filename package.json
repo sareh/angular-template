@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sareh/angular-template/issues"
   },
-  "homepage": "https://github.com/sareh/angular-template#readme"
+  "homepage": "https://github.com/sareh/angular-template#readme",
+  "dependencies": {
+    "bower": "^1.7.1"
+  }
 }
