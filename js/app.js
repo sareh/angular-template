@@ -1,11 +1,11 @@
-(function() {
-  'use strict';
-
-  var dependencies = [
-    'ngAria'
+angular
+  .module('templateApp', [
+    'ngAria',
     'ui.router',
-    'angular-jwt'
-  ];
-
-  module.exports = angular.module('templateApp', dependencies);
-})();
+    'angular-jwt',
+    'ngResource'
+  ])
+  .constant('API', 'http://localhost:3000/api')
+  .config(function($httpProvider){
+    $httpProvider.interceptors.push('authInterceptor');
+});
