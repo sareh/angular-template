@@ -10,7 +10,11 @@
   "moduleType": [],
   "dependencies": {
     "angular": "~1.4.8",
-    "angular-aria": "~1.4.8"
+    "angular-aria": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "angular-jwt": "~0.0.9",
+    "angular-ui-router": "~0.2.15",
+    "foundation-sites": "~6.0.5"
   },
   "devDependencies": {
     "gulp": "~3.9.0"
