@@ -11,7 +11,7 @@ var uglifycss     = require('gulp-uglifycss');
 var postcss       = require('gulp-postcss');
 var sourcemaps    = require('gulp-sourcemaps');
 var autoprefixer  = require('autoprefixer');
-var concat-vendor = require('gulp-concat-vendor');
+// var concat-vendor = require('gulp-concat-vendor');
 
 gulp.task('default', function() {
   
@@ -19,7 +19,7 @@ gulp.task('default', function() {
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('stylesheets/scss/*.scss',['styles'], function(){
+  gulp.watch('stylesheets/scss/app.scss',['styles'], function(){
     livereload.reload('index.html');
   });
 });
@@ -31,7 +31,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('styles', function() {
-  gulp.src('stylesheets/scss/*.scss')
+  gulp.src('stylesheets/scss/app.scss')
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('stylesheets/css/'))
       .pipe(livereload());
