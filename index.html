@@ -22,7 +22,25 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/css/app.css">
 </head>
 <body>
-  <header ui-view="navigation">
+  <!-- <header ui-view="navigation"> -->
+  <header>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Angular App</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a href="#">Register</a></li>
+          <li class=""><a href="#">Login</a></li>
+          <li class=""><a href="#">Logout</a></li>
+        </ul>
+      </section>
+    </nav>
   </header>
   <main ui-view>
     
