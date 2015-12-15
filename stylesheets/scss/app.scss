@@ -1,7 +1,7 @@
-@import "foundation_settings";
+@import "foundation/settings/_settings";
 @import "variables";
+@import "mixins";
 
 body {
   background-color: pink;
-
 }
