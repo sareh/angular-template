@@ -1,26 +1,26 @@
-(function(){
-  'use strict';
+// (function(){
+//   'use strict';
 
-  Router.$inject = ['$stateProvider', '$urlRouterProvider']
-  function Router($stateProvider, $urlRouterProvider){
+//   Router.$inject = ['$stateProvider', '$urlRouterProvider']
+//   function Router($stateProvider, $urlRouterProvider){
 
-    function helper(pair) {
-      var splitPair  = pair.split('#');
-      var resource   = splitPair[0];
-      var action     = splitPair[1];
+//     function helper(pair) {
+//       var splitPair  = pair.split('#');
+//       var resource   = splitPair[0];
+//       var action     = splitPair[1];
 
-      return {
-        url: '/' + action,
-        templateUrl: 'app/views/' + resource + '/' + action + '.html',
-        controller: resource + 'Controller as ' + resource
-      }
-    }
+//       return {
+//         url: '/' + action,
+//         templateUrl: 'app/views/' + resource + '/' + action + '.html',
+//         controller: resource + 'Controller as ' + resource
+//       }
+//     }
 
-    $stateProvider
-      .state('home',  helper('statics#home'))
+//     $stateProvider
+//       .state('home',  helper('statics#home'))
 
-      $urlRouterProvider.otherwise('/');
-  }
+//       $urlRouterProvider.otherwise('/');
+//   }
 
-  this.config(Router);
-}).call(require('../js/app.js'));
+//   this.config(Router);
+// }).call(require('../js/app.js'));
