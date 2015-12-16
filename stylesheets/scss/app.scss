@@ -5,5 +5,21 @@
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 
 body {
-  background-color: $body-background;
+  background-color: blue;//$body-background;
+
+  .top-bar {
+    background-color: $primary-color;
+    ul {
+      background-color: $primary-color;
+      li {
+        a {
+          color: $body-font-color;
+        }
+        &:hover,
+        &:focus {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
 }
