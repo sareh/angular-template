@@ -1,28 +1,26 @@
-(function() {
-  'use strict';
+angular
+  .module('templateApp')
+  .factory('User', User)
 
-  User.$inject = ['$resource', 'API'];
-  function User($resource, API) {
+User.$inject = ['$resource', 'API']
+function User($resource, API){
 
-    return $resource(
-      API+'/users/:id',
-      {id: '@id'},
-      { 'get':       { method: 'GET' },
-        'save':      { method: 'POST' },
-        'query':     { method: 'GET', isArray: true},
-        'remove':    { method: 'DELETE' },
-        'delete':    { method: 'DELETE' },
-        'authorize': {
-          url: API + '/authorize',
-          method: "POST"
-        },
-        'join': {
-          url: API + '/join',
-          method: "POST"
-        }
+  return $resource(
+    API+'/users/:id', 
+    {id: '@id'},
+    { 
+      'get':       { method: 'GET' },
+      'save':      { method: 'POST' },
+      'query':     { method: 'GET', isArray: false},
+      'remove':    { method: 'DELETE' },
+      'delete':    { method: 'DELETE' },
+      'register': {
+        url: API +'/register',
+        method: "POST"
+      },
+      'login':{
+        url: API + '/login',
+        method: "POST"
       }
-    );
-  }
-
-  module.exports = angular.module('templateApp').factory('User', User);
-})();
+    });
+}
