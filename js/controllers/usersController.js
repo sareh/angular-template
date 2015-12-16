@@ -2,25 +2,19 @@ angular
   .module('templateApp')
   .controller('usersController', UsersController);
 
-UsersController.$inject = ['$resource', 'User', 'tokenService', '$state', 'currentUser', '$auth'];
+UsersController.$inject = ['$resource', 'User', 'tokenService', '$state', 'currentUser'];
 
-function UsersController($resource, User, tokenService, $state, currentUser, $auth){
+function UsersController($resource, User, tokenService, $state, currentUser) {
   
   var self = this;
 
   self.all          = [];
   self.user         = {};
-  self.authenticate = authenticate;
   self.register     = register;
   self.login        = login;
   self.logout       = logout;
   self.isLoggedIn   = isLoggedIn;
   self.getUsers     = getUsers;
-  
-
-  function authenticate(provider) {
-    $auth.authenticate(provider);
-  }
 
   function register() {
     User.register(self.user, handleLogin);
