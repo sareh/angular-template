@@ -1,4 +1,4 @@
-<section id="register">
+<section id="register" ng-hide="users.checkLoggedIn()">
   <h2>Register</h2>
   <form id="register-form" name="users.registerForm" ng-submit="users.register()" novalidate>
     <div class="row">
