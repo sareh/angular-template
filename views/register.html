@@ -1,8 +1,12 @@
 <section id="register" ng-hide="users.checkLoggedIn()">
-  <h2>Register</h2>
+  <div class="row">
+    <div class="small-10 small-centered medium-8 columns">
+      <h2>Register</h2>
+    </div>
+  </div>
   <form id="register-form" name="users.registerForm" ng-submit="users.register()" novalidate>
     <div class="row">
-      <div class="large-12 columns">
+      <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
         <label for="register-email">Email</label>
         <input type="text" id="register-email" name="email" placeholder="email address">
         <div class="ng-message-error error" ng-messages="users.registerForm['email'].$error" ng-show="(users.registerForm.$submitted && users.registerForm['email'].$invalid)">
@@ -11,7 +15,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="large-12 columns">
+      <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
         <label for="register-password">Password</label>
         <input type="text" id="register-password" name="password" placeholder="password">
         <div class="ng-message-error error" ng-messages="users.registerForm['password'].$error" ng-show="(users.registerForm.$submitted && users.registerForm['password'].$invalid)">
@@ -20,7 +24,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="large-12 columns">
+      <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
         <label for="register-password-confirmation">Password confirmation</label>
         <input type="text" id="register-password-confirmation" name="password-confirmation" placeholder="password">
         <div class="ng-message-error error" ng-messages="users.registerForm['password'].$error" ng-show="(users.registerForm.$submitted && users.registerForm['password'].$invalid)">
@@ -28,6 +32,10 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="button round">Register</button>
+    <div class="row">
+      <div class="small-10 small-offset-1 medium-8 medium-offset-2">
+        <button type="submit" class="button round">Register</button>
+      </div>
+    </div>
   </form>
 </section>
