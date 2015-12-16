@@ -6,6 +6,7 @@ AuthInterceptor.$inject = ['API', 'tokenService'];
 function AuthInterceptor(API, tokenService) {
 
   return {
+    
     request: function(config){
       var token = tokenService.getToken();
 
@@ -21,6 +22,6 @@ function AuthInterceptor(API, tokenService) {
       }
       return res;
     }
-  }
 
+  }
 }

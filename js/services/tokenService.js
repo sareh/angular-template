@@ -7,21 +7,25 @@ function TokenService($window, jwtHelper){
 
   var self = this;
 
-  self.saveToken = function(token) {
-    return $window.localStorage.setItem('secret-handshake', token);
+  self.setToken    = setToken;
+  self.getToken    = getToken;
+  self.decodeToken = decodeToken;
+  self.removeToken = removeToken;
+
+  function setToken (token) {
+    return $window.localStorage.setItem('auth-token', token);
   }
 
-  self.getToken = function(){
-    return $window.localStorage.getItem('secret-handshake');
+  function getToken (){
+    return $window.localStorage.getItem('auth-token');
   }
 
-  self.removeToken = function(){
-    return $window.localStorage.removeItem('secret-handshake');
-  }
-
-  self.decodeToken = function(){
+  function decodeToken (){
     var token = self.getToken();
     return token ? jwtHelper.decodeToken(token) : {};
   }
 
+  function removeToken (){
+    return $window.localStorage.removeItem('auth-token');
+  }
 }
