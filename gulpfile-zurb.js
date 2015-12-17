@@ -51,19 +51,8 @@ var PATHS = {
     'bower_components/foundation-sites/js/foundation.tabs.js',
     'bower_components/foundation-sites/js/foundation.toggler.js',
     'bower_components/foundation-sites/js/foundation.tooltip.js',
-    
-    // 'src/assets/js/**/*.js',
-    // 'src/assets/js/foundation.js'
-  ],
-  angular: [
-    'src/assets/js/app.js',
-    'src/assets/js/services/tokenService.js',
-    'src/assets/js/services/authInterceptor.js',
-    'src/assets/js/services/currentUser.js',
-    'src/assets/js/models/user.js',
-    'src/assets/js/models/chat.js',
-    'src/assets/js/controllers/usersController.js',
-    'src/assets/js/controllers/chatsController.js'
+    'src/assets/js/**/*.js',
+    'src/assets/js/app.js'
   ]
 };
 
@@ -97,6 +86,13 @@ gulp.task('pages:reset', function(cb) {
   panini.refresh();
   gulp.run('pages');
   cb();
+});
+
+gulp.task('styleguide', function(cb) {
+  sherpa('src/styleguide/index.md', {
+    output: 'dist/styleguide.html',
+    template: 'src/styleguide/template.html'
+  }, cb);
 });
 
 // Compile Sass into CSS
@@ -137,23 +133,7 @@ gulp.task('javascript', function() {
 
   return gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
-    .pipe($.concat('javascript-concat.js'))
-    .pipe(uglify)
-    .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('dist/assets/js'));
-});
-
-// Combine Angular JavaScript into one file
-// In production, the file is minified
-gulp.task('angular', function() {
-  var uglify = $.if(isProduction, $.uglify()
-    .on('error', function (e) {
-      console.log(e);
-    }));
-
-  return gulp.src(PATHS.angular)
-    .pipe($.sourcemaps.init())
-    .pipe($.concat('angular-app-concat.js'))
+    .pipe($.concat('app.js'))
     .pipe(uglify)
     .pipe($.if(!isProduction, $.sourcemaps.write()))
     .pipe(gulp.dest('dist/assets/js'));
@@ -173,7 +153,7 @@ gulp.task('images', function() {
 
 // Build the "dist" folder by running all of the above tasks
 gulp.task('build', function(done) {
-  sequence('clean', ['pages', 'sass', 'javascript', 'angular', 'images', 'copy'], done);
+  sequence('clean', ['pages', 'sass', 'javascript', 'images', 'copy'], 'styleguide', done);
 });
 
 // Start a server with LiveReload to preview the site in
@@ -191,4 +171,5 @@ gulp.task('default', ['build', 'server'], function() {
   gulp.watch(['src/assets/scss/**/*.scss'], ['sass', browser.reload]);
   gulp.watch(['src/assets/js/**/*.js'], ['javascript', browser.reload]);
   gulp.watch(['src/assets/img/**/*'], ['images', browser.reload]);
+  gulp.watch(['src/styleguide/**'], ['styleguide', browser.reload]);
 });
