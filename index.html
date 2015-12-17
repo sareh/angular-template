@@ -2,46 +2,9 @@
 <html ng-app="templateApp" lang="en" dir="ltr">
 <head>
   <title>Angular Template</title>
-  <!-- Bower JS Resources
-      the following are now in js/vendor/angular-concatenated.min.js
-
-      bower_components/angular/angular.min.js
-      bower_components/angular-jwt/dist/angular-jwt.js
-      bower_components/angular-resource/angular-resource.min.js
-      bower_components/angular-ui-router/release/angular-ui-router.min.js
-      bower_components/angular-aria/angular-aria.min.js
-  -->
-  <!-- <script type="text/javascript" src="js/vendor/angular-concatenated.min.js"></script> -->
-  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-  <script type="text/javascript" src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
-  <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
-  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
-  
-
-  <!-- Internal JS Resources -->
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/models/user.js"></script>
-  <script type="text/javascript" src="js/models/chat.js"></script>
-  <script type="text/javascript" src="js/services/tokenService.js"></script>
-  <script type="text/javascript" src="js/services/authInterceptor.js"></script>
-  <script type="text/javascript" src="js/services/currentUser.js"></script>
-  <script type="text/javascript" src="js/controllers/usersController.js"></script>
-  <script type="text/javascript" src="js/controllers/chatsController.js"></script>
-  <!-- 
-      the following will be in js/app.min.js
-      
-      js/app.js
-      js/models/user.js
-      js/controllers/usersController.js
-      js/services/tokenService.js
-      js/services/authInterceptor.js
-      js/services/currentUser.js
-  -->
-  <!-- <script type="text/javascript" src="js/app.min.js"></script> -->
-  <!-- Style -->
-  <link rel="stylesheet" type="text/css" href="../bower_components/foundation-sites/foundation-sites-6.0.6/dist/foundation.min.css">
-  <link rel="stylesheet" type="text/css" href="dist/css/app.css">
+  <script type="text/javascript" src="dist/assets/js/angular-vendor-concat.js"></script>
+  <script type="text/javascript" src="dist/assets/js/angular-app-concat.js"></script>
+  <link rel="stylesheet" type="text/css" href="dist/assets/css/app.css">
 </head>
 <body ng-controller="usersController as users">
   <!-- <header ui-view="navigation"> -->
@@ -74,11 +37,6 @@
   </noscript>
   <main ui-view>
   </main>
-  <!-- Bower resources
-  the following are now in js/vendor/jqueryplusfoundation.min.js
-
-  bower_components/jquery/dist/jquery.min.js
-  bower_components/foundation-sites/dist/foundation.min.js -->
-  <script type="text/javascript" src="js/vendor/jqueryplusfoundation.min.js"></script>
+  <script type="text/javascript" src="dist/assets/js/javascript-foundation-concat.js"></script>
 </body>
 </html>

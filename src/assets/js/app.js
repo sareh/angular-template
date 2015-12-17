@@ -16,31 +16,31 @@ function MainRouter($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'views/home.html',
+      templateUrl: 'dist/assets/views/home.html',
     })
     .state('about', {
       url: '/about',
-      templateUrl: 'views/about.html',
+      templateUrl: 'dist/assets/views/about.html',
     })
     .state('register', {
       url: '/register',
-      templateUrl: 'views/register.html',
+      templateUrl: 'dist/assets/views/register.html',
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'views/login.html',
+      templateUrl: 'dist/assets/views/login.html',
     })
     .state('users', {
       url: '/users',
-      templateUrl: 'views/users.html',
+      templateUrl: 'dist/assets/views/users.html',
     })
     .state('chats', {
       url: '/chats',
-      templateUrl: 'views/chats.html',
+      templateUrl: 'dist/assets/views/chats.html',
     })
     // .state('newchat', {
     //   url: "/newchat",
-    //   templateUrl: "newchat.html"
+    //   templateUrl: "dist/assets/views/newchat.html"
     // });
   $urlRouterProvider.otherwise('/');
 }
