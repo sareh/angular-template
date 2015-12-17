@@ -40,8 +40,8 @@
   -->
   <!-- <script type="text/javascript" src="js/app.min.js"></script> -->
   <!-- Style -->
-  <link rel="stylesheet" type="text/css" href="../bower_components/foundation-sites/dist/foundation.min.css">
-  <link rel="stylesheet" type="text/css" href="stylesheets/css/app.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/foundation-sites/foundation-sites-6.0.6/dist/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/app.css">
 </head>
 <body ng-controller="usersController as users">
   <!-- <header ui-view="navigation"> -->
@@ -56,7 +56,7 @@
 
       <section class="top-bar-section">
         <!-- Right Nav Section -->
-        <ul class="right">
+        <ul class="top-bar-right right">
           <li ng-hide="users.isLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="login">Login</a></li>
           <li ng-hide="users.isLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="register">Register</a></li>
           <li ng-show="users.isLoggedIn()"><a href="#" ui-sref-active="active" ui-sref="profile">My Profile</a></li>
