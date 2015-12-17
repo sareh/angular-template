@@ -75,7 +75,7 @@ var PATHS = {
     'src/assets/js/controllers/chatsController.js',
   ],
   views: [
-    'src/assets/views/**/*.html',
+    'src/assets/views/*.html',
   ]
 };
 
@@ -197,7 +197,12 @@ gulp.task('views', function() {
     .pipe(gulp.dest('dist/assets/views'));
 });
 
-gulp.task('default', ['clean', 'sass', 'javascript', 'angularvendor', 'angularapp', 'views'], function() {
+gulp.task('watch', function () {
+  gulp.watch(['src/assets/js/**/*.js'], ['angularapp', browser.reload]);
+  gulp.watch(['src/assets/views/**/*.html'], ['views', browser.reload]);
+});
+
+gulp.task('default', ['clean', 'sass', 'javascript', 'angularvendor', 'angularapp', 'views', 'watch'], function() {
   gulp.watch(PATHS.assets, ['copy', browser.reload]);
   // gulp.watch(['index.html'], ['views', browser.reload]);
   gulp.watch(['src/assets/views/**/*.html'], ['views', browser.reload]);
